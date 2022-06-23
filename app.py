@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request,redirect,make_response
 import requests
 import templates
+from auth import auth
 
 app  =Flask(__name__)
 
