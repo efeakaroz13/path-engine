@@ -16,7 +16,7 @@ class views:
 				return templates.home()
 			else:
 				pass
-				
+
 
 		return templates.index()
 
@@ -39,4 +39,10 @@ class views:
 			
 			return response
 		return templates.login()
+
+	@app.route("/account")
+	def account():
+		username = request.cookies.get("username")
+		
+		return templates.profile(username)
 app.run(debug=True)
