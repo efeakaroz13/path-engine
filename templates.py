@@ -40,7 +40,9 @@ def index():
 
 			<div class="container">
 			<center><br><br>
-				<p>Welcome to <code>Path Engine</code> by Kentel</p>
+				<p>Welcome to <code>Path Engine</code> by Kentel</p><br>
+				<br>
+				<a href="/login">Login</a> or <a href="/register">Register</a>
 					
 				
 				
@@ -58,31 +60,63 @@ def login():
 	return """
 		<html>
 			<head>
-				<title>Path Engine - Login</title>
-				<link rel="shortcut icon" href="/static/fav.png">
-				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-				
 				<meta charset="UTF-8">
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>Path Engine</title>
+				<link rel="shortcut icon" href="/static/fav.png">
+				<link rel="preconnect" href="https://fonts.googleapis.com">
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+				<link href="https://fonts.googleapis.com/css2?family=Koulen&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+				
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js" integrity="sha512-LW9+kKj/cBGHqnI4ok24dUWNR/e8sUD8RLzak1mNw5Ja2JYCmTXJTF5VpgFSw+VoBfpMvPScCo2DnKTIUjrzYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css" integrity="sha512-LopA1sokwAW/FNZdP+/5q8MGyb9CojL1LTz8JMyu/8YZ8XaCDn1EOm6L7RWIIOHRM7K4jwnHuOmyLZeeeYxSOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/v4-shims.min.css" integrity="sha512-fSDKn6bxKjJWWaTbtlYfFf+1sRuP/CC+T+jhy26N/s2FcBI89kn6aShnsDmECKd2I1nRlXOButa2A2wzQ8mNEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<!-- Google Fonts -->
+				<link
+				  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+				  rel="stylesheet"
+				/>
+				<!-- MDB -->
+				<link
+				  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
+				  rel="stylesheet"
+				/>
 			</head>
 			<body>
-			<div class="nav">
-				<h3>Path Engine - Login</h3>
-				<center>
-					<br><br>
-					<form action="" method="POST" style="font-size:25px">
-						<input type="text" name="username" placeholder="Username..."><br>
-						<input type="password" name="password" placeholder="Password..."><br>
-						<button type="submit">Log in</button>
-					</form>
-				</center>
+			
+			<nav class="navbar navbar-light " style="background:#c4c4c4">
+			  <a class="navbar-brand" href="/" style="font-family: 'Koulen', cursive;font-family: 'Merriweather', serif;">
+			    <img src="/static/fav.png" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-left:10px;margin-right:10px;">
+			    Path Engine
+			  </a>
+			</nav>
+
+
+			<div class="container">
+			<center><br><br>
+				<div class="card" style="width:70%;">
+					<div class="card-body">
+						<h5 class="card-title">Log In</h5>
+						<form action="/login" method="POST">
+							<input type="text" autocomplete="off" name="username" placeholder="Username..." class="form-control" required><br>
+							<input type="password" autocomplete="off" name="password" placeholder="Password..." class="form-control" required><br>
+							<button class="btn btn-dark" type="submit">Log In</button>
+						</form>
+					</div>
+				</div>
+				
+				
+				
+			</center>
 			</div>
 			
 			</body>
 
 		</html>
-
 	"""
 
 
@@ -92,24 +126,56 @@ def login_err():
 			<head>
 				<meta charset="UTF-8">
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-				<title>Path Engine - Login</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>Path Engine</title>
 				<link rel="shortcut icon" href="/static/fav.png">
+				<link rel="preconnect" href="https://fonts.googleapis.com">
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+				<link href="https://fonts.googleapis.com/css2?family=Koulen&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+				
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js" integrity="sha512-LW9+kKj/cBGHqnI4ok24dUWNR/e8sUD8RLzak1mNw5Ja2JYCmTXJTF5VpgFSw+VoBfpMvPScCo2DnKTIUjrzYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css" integrity="sha512-LopA1sokwAW/FNZdP+/5q8MGyb9CojL1LTz8JMyu/8YZ8XaCDn1EOm6L7RWIIOHRM7K4jwnHuOmyLZeeeYxSOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/v4-shims.min.css" integrity="sha512-fSDKn6bxKjJWWaTbtlYfFf+1sRuP/CC+T+jhy26N/s2FcBI89kn6aShnsDmECKd2I1nRlXOButa2A2wzQ8mNEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<!-- Google Fonts -->
+				<link
+				  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+				  rel="stylesheet"
+				/>
+				<!-- MDB -->
+				<link
+				  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
+				  rel="stylesheet"
+				/>
 			</head>
 			<body>
-			<div class="nav">
-				<h3>Path Engine - Login</h3>
-				<center>
-					<br><br>
-					<form action="" method="POST" style="font-size:25px">
-						<input type="text" name="username" placeholder="Username..."><br>
-						<input type="password" name="password" placeholder="Password..."><br>
-						<button type="submit">Log in</button><br>
-						<p style="color:red">Email or password is not correct!</p>
-					</form>
-				</center>
+			
+			<nav class="navbar navbar-light " style="background:#c4c4c4">
+			  <a class="navbar-brand" href="/" style="font-family: 'Koulen', cursive;font-family: 'Merriweather', serif;">
+			    <img src="/static/fav.png" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-left:10px;margin-right:10px;">
+			    Path Engine
+			  </a>
+			</nav>
+
+
+			<div class="container">
+			<center><br><br>
+				<div class="card" style="width:70%;">
+					<div class="card-body">
+						<h5 class="card-title">Log In</h5>
+						<form action="/login" method="POST">
+							<input type="text" autocomplete="off" name="username" placeholder="Username..." class="form-control" style="border:1px solid red;"required><br>
+							<input type="password" autocomplete="off" name="password" placeholder="Password..." class="form-control" style="border:1px solid red;"required><br>
+							<button class="btn btn-dark" type="submit">Log In</button>
+						</form>
+					</div>
+				</div>
+				
+				
+				
+			</center>
 			</div>
 			
 			</body>
@@ -190,15 +256,169 @@ def home():
 	"""
 
 
-def profile(username):
+def profile(username,msg):
+	if msg == "":
+
+		return """
+			<html>
+				<head>
+					<meta charset="UTF-8">
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<title>("""+username+""")Path Engine</title>
+					<link rel="shortcut icon" href="/static/fav.png">
+					<link rel="preconnect" href="https://fonts.googleapis.com">
+					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+					<link href="https://fonts.googleapis.com/css2?family=Koulen&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+					
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js" integrity="sha512-LW9+kKj/cBGHqnI4ok24dUWNR/e8sUD8RLzak1mNw5Ja2JYCmTXJTF5VpgFSw+VoBfpMvPScCo2DnKTIUjrzYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css" integrity="sha512-LopA1sokwAW/FNZdP+/5q8MGyb9CojL1LTz8JMyu/8YZ8XaCDn1EOm6L7RWIIOHRM7K4jwnHuOmyLZeeeYxSOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/v4-shims.min.css" integrity="sha512-fSDKn6bxKjJWWaTbtlYfFf+1sRuP/CC+T+jhy26N/s2FcBI89kn6aShnsDmECKd2I1nRlXOButa2A2wzQ8mNEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+					<!-- Google Fonts -->
+					<link
+					  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+					  rel="stylesheet"
+					/>
+					<!-- MDB -->
+					<link
+					  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
+					  rel="stylesheet"
+					/>
+				</head>
+				<body>
+				
+				<nav class="navbar navbar-light " style="background:#c4c4c4">
+				  <a class="navbar-brand" href="/" style="font-family: 'Koulen', cursive;font-family: 'Merriweather', serif;">
+				    <img src="/static/fav.png" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-left:10px;margin-right:10px;">
+				    Path Engine
+				  </a>
+				  <a href="/account" style="margin-right:20px;border:1px solid #fff;padding:10px;border-radius:50%;background:#fff"><i class="fa fa-user" style="color:black"></i></a>
+				</nav>
+
+
+				<div class="container">
+				<center><br><br>
+					<div class="card" style="width:70%;">
+
+
+						<div class="card-body">
+							<h5 class="card-title">"""+username+""" (you)<br> </h5>
+
+						</div>
+
+					</div><br>
+					<div class="card" style="width:70%;padding-bottom:0px;">
+
+
+						<div class="card-body">
+							<h5 class="card-title">Settings</h5>
+
+						
+
+							<ul class="list-group" style="text-align:left;margin-bottom:0px">
+								<li onclick="window.location.assign('/change_password')" class="list-group-item">Change Password</li>
+								<li onclick="window.location.assign('/logout')" class="list-group-item">Logout</li>
+							</ul>
+
+						</div>
+					</div>
+					
+				</center>
+				</div>
+				
+				</body>
+
+			</html>
+		"""
+
+	else:
+		return """
+			<html>
+				<head>
+					<meta charset="UTF-8">
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<title>("""+username+""")Path Engine</title>
+					<link rel="shortcut icon" href="/static/fav.png">
+					<link rel="preconnect" href="https://fonts.googleapis.com">
+					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+					<link href="https://fonts.googleapis.com/css2?family=Koulen&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+					
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js" integrity="sha512-LW9+kKj/cBGHqnI4ok24dUWNR/e8sUD8RLzak1mNw5Ja2JYCmTXJTF5VpgFSw+VoBfpMvPScCo2DnKTIUjrzYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css" integrity="sha512-LopA1sokwAW/FNZdP+/5q8MGyb9CojL1LTz8JMyu/8YZ8XaCDn1EOm6L7RWIIOHRM7K4jwnHuOmyLZeeeYxSOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/v4-shims.min.css" integrity="sha512-fSDKn6bxKjJWWaTbtlYfFf+1sRuP/CC+T+jhy26N/s2FcBI89kn6aShnsDmECKd2I1nRlXOButa2A2wzQ8mNEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+					<!-- Google Fonts -->
+					<link
+					  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+					  rel="stylesheet"
+					/>
+					<!-- MDB -->
+					<link
+					  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
+					  rel="stylesheet"
+					/>
+				</head>
+				<body>
+				
+				<nav class="navbar navbar-light " style="background:#c4c4c4">
+				  <a class="navbar-brand" href="/" style="font-family: 'Koulen', cursive;font-family: 'Merriweather', serif;">
+				    <img src="/static/fav.png" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-left:10px;margin-right:10px;">
+				    Path Engine
+				  </a>
+				  <a href="/account" style="margin-right:20px;border:1px solid #fff;padding:10px;border-radius:50%;background:#fff"><i class="fa fa-user" style="color:black"></i></a>
+				</nav>
+
+				<div class="alert alert-primary" style="position:fixed;right:10px;bottom:10px" id="alert"><a href="/account" style="margin-right:10px">x</a>"""+msg+"""</div>
+				<div class="container">
+				<center><br><br>
+					<div class="card" style="width:70%;">
+
+
+						<div class="card-body">
+							<h5 class="card-title">"""+username+""" (you)<br> </h5>
+
+						</div>
+
+					</div><br>
+					<div class="card" style="width:70%;padding-bottom:0px;">
+
+
+						<div class="card-body">
+							<h5 class="card-title">Settings</h5>
+
+						
+
+							<ul class="list-group" style="text-align:left;margin-bottom:0px">
+								<li onclick="window.location.assign('/change_password')" class="list-group-item">Change Password</li>
+								<li onclick="window.location.assign('/logout')" class="list-group-item">Logout</li>
+							</ul>
+
+						</div>
+					</div>
+					
+				</center>
+				</div>
+				
+				</body>
+
+			</html>
+		"""
+def register():
 	return """
+
 		<html>
 			<head>
 				<meta charset="UTF-8">
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
 				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>("""+username+""")Path Engine</title>
+				<title>Path Engine</title>
 				<link rel="shortcut icon" href="/static/fav.png">
 				<link rel="preconnect" href="https://fonts.googleapis.com">
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -227,8 +447,7 @@ def profile(username):
 			    <img src="/static/fav.png" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-left:10px;margin-right:10px;">
 			    Path Engine
 			  </a>
-			  <a href="/account" style="margin-right:20px;border:1px solid #fff;padding:10px;border-radius:50%;background:#fff"><i class="fa fa-user" style="color:black"></i></a>
-			</nav>
+			 </nav>
 
 
 			<div class="container">
@@ -237,28 +456,24 @@ def profile(username):
 
 
 					<div class="card-body">
-						<h5 class="card-title">"""+username+""" (you)</h5>
+							<h5 class="card-title">Register to PathEngine</h5>
+							<p class="card-text">
+								<form action="" method="POST">
+									<input type="text" autocomplete="off" placeholder="Username..." name="username" class="form-control" required><br>
+									<input type="text" autocomplete="off" placeholder="Full Name..." name="fullname" class="form-control" required><br>
+									<input type="text" autocomplete="off" placeholder="Birth Year..." name="birthyear" class="form-control" required><br>
+									<textarea placeholder="Bio..." class="form-control" name="bio" required></textarea><br>
+									<input type="password" autocomplete="off" placeholder="Password..." name="password" class="form-control" required><br>
+									<button class="btn btn-dark">Register</button>
+									
+									
+									
 
+								</form>
+							</p>
 					</div>
 
 				</div><br>
-				<div class="card" style="width:70%;">
-
-
-					<div class="card-body">
-						<h5 class="card-title">Complete your profile</h5>
-
-					</div>
-					<p class="card-text">
-					<form action="" method="POST">
-						<input type="email" name="email" placeholder="Enter email..." class="form-control" style="width:60%;"><br>
-						<input type="text" name="fullname" placeholder="Your Full Name?" class="form-control" style="width:60%;"><br>
-						<input type="file" name="ppicture" placeholder="Profile Picture" class="form-control" style="width:60%;"><br>
-						<button type="submit" class="btn btn-primary"> Enter your profile</button>
-						
-					</form>
-					</p>
-				</div>
 				
 			</center>
 			</div>
@@ -266,5 +481,75 @@ def profile(username):
 			</body>
 
 		</html>
+
 	"""
+
+def change_password():
+	return """
+
+		<html>
+			<head>
+				<meta charset="UTF-8">
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>Path Engine</title>
+				<link rel="shortcut icon" href="/static/fav.png">
+				<link rel="preconnect" href="https://fonts.googleapis.com">
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+				<link href="https://fonts.googleapis.com/css2?family=Koulen&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+				
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js" integrity="sha512-LW9+kKj/cBGHqnI4ok24dUWNR/e8sUD8RLzak1mNw5Ja2JYCmTXJTF5VpgFSw+VoBfpMvPScCo2DnKTIUjrzYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css" integrity="sha512-LopA1sokwAW/FNZdP+/5q8MGyb9CojL1LTz8JMyu/8YZ8XaCDn1EOm6L7RWIIOHRM7K4jwnHuOmyLZeeeYxSOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/v4-shims.min.css" integrity="sha512-fSDKn6bxKjJWWaTbtlYfFf+1sRuP/CC+T+jhy26N/s2FcBI89kn6aShnsDmECKd2I1nRlXOButa2A2wzQ8mNEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+				<!-- Google Fonts -->
+				<link
+				  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+				  rel="stylesheet"
+				/>
+				<!-- MDB -->
+				<link
+				  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
+				  rel="stylesheet"
+				/>
+				<script src="/static/change-password.js"></script>
+			</head>
+			<body>
+			
+			<nav class="navbar navbar-light " style="background:#c4c4c4">
+			  <a class="navbar-brand" href="/" style="font-family: 'Koulen', cursive;font-family: 'Merriweather', serif;">
+			    <img src="/static/fav.png" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-left:10px;margin-right:10px;">
+			    Path Engine
+			  </a>
+			 </nav>
+
+
+			<div class="container">
+			<center><br><br>
+				<div class="card" style="width:70%;">
+
+
+					<div class="card-body">
+							<h5 class="card-title">Change Password</h5>
+							<form action="" method="POST">
+								<input type="password" placeholder="Old Password" name="oldpassword" class="form-control"><br>
+								<input type="password" placeholder="New Password" name="newpassword" class="form-control"><br>
+
+							</form>
+							<button onclick="change_password()" class="btn btn-primary" style="margin-right:10px">Change</button><button class="btn btn-danger" onclick="cancel()">Cancel</button>
+					</div>
+
+				</div><br>
+				
+			</center>
+			</div>
+			
+			</body>
+
+		</html>
+
+	"""
+
 
