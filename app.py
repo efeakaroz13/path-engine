@@ -95,4 +95,9 @@ class views:
 					return templates.change_password()
 				else:
 					return abort(403)
+
+
+	@app.route("/create_project")
+	def create_project():
+		return templates.createProj()
 app.run(debug=True)
